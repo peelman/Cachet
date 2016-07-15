@@ -11,6 +11,8 @@
 
 namespace CachetHQ\Cachet\Bus\Commands\TimedAction;
 
+use CachetHQ\Cachet\Models\TimedAction;
+
 /**
  * This is the report timed action command class.
  *
@@ -18,5 +20,22 @@ namespace CachetHQ\Cachet\Bus\Commands\TimedAction;
  */
 final class ReportTimedActionCommand
 {
-    //
+    /**
+     * The action we're reporting on.
+     *
+     * @var \CachetHQ\Cachet\Models\TimedAction
+     */
+    public $action;
+
+    /**
+     * Create a new report timed action command instance.
+     *
+     * @param \CachetHQ\Cachet\Models\TimedAction $action
+     *
+     * @return void
+     */
+    public function __construct(TimedAction $action)
+    {
+        $this->action = $action;
+    }
 }
