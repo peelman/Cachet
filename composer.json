@@ -20,6 +20,7 @@
     ],
     "require": {
         "php": ">=5.5.9",
+        "ext-xml": "*",
         "laravel/framework": "5.2.39",
         "alt-three/badger": "^3.1",
         "alt-three/bus": "^1.1",
@@ -44,7 +45,7 @@
         "roumen/feed": "^2.10.4"
     },
     "require-dev": {
-        "alt-three/testbench": "^1.4",
+        "alt-three/testbench": "^1.7",
         "filp/whoops": "^2.1",
         "fzaninotto/faker": "^1.6",
         "graham-campbell/testbench-core": "^1.1",
