@@ -82,6 +82,21 @@ return [
         ],
     ],
 
+    // Action form fields
+    'actions' => [
+        'name'               => 'Name',
+        'description'        => 'Description',
+        'start_at'           => 'Schedule start time',
+        'timezone'           => 'Timezone',
+        'schedule_frequency' => 'Schedule frequency (in seconds)',
+        'completion_latency' => 'Completion latency (in seconds)',
+        'group'              => 'Group',
+        'active'             => 'Active?',
+        'groups'             => [
+            'name' => 'Group Name',
+        ],
+    ],
+
     // Metric form fields
     'metrics' => [
         'name'             => 'Name',
@@ -104,17 +119,20 @@ return [
 
     // Settings
     'settings' => [
-        /// Application setup
+        // Application setup
         'app-setup' => [
-            'site-name'              => 'Site Name',
-            'site-url'               => 'Site URL',
-            'display-graphs'         => 'Display graphs on status page?',
-            'about-this-page'        => 'About this page',
-            'days-of-incidents'      => 'How many days of incidents to show?',
-            'banner'                 => 'Banner Image',
-            'banner-help'            => "It's recommended that you upload files no bigger than 930px wide .",
-            'subscribers'            => 'Allow people to signup to email notifications?',
-            'automatic_localization' => 'Automatically localise your status page to your visitor\'s language?',
+            'site-name'                    => 'Site Name',
+            'site-url'                     => 'Site URL',
+            'display-graphs'               => 'Display graphs on status page?',
+            'about-this-page'              => 'About this page',
+            'days-of-incidents'            => 'How many days of incidents to show?',
+            'banner'                       => 'Banner Image',
+            'banner-help'                  => "It's recommended that you upload files no bigger than 930px wide .",
+            'subscribers'                  => 'Allow people to signup to email notifications?',
+            'skip_subscriber_verification' => 'Skip verifying of users? (Be warned, you could be spammed)',
+            'automatic_localization'       => 'Automatically localise your status page to your visitor\'s language?',
+            'enable_external_dependencies' => 'Enable Third Party Dependencies (Google Fonts, Trackers, etc...)',
+            'show_timezone'                => 'Show the timezone the status page is running in.',
         ],
         'analytics' => [
             'analytics_google'       => 'Google Analytics code',
@@ -123,10 +141,10 @@ return [
             'analytics_piwik_siteid' => 'Piwik\'s site id',
         ],
         'localization' => [
-            'site-timezone'          => 'Site timezone',
-            'site-locale'            => 'Site language',
-            'date-format'            => 'Date format',
-            'incident-date-format'   => 'Incident timestamp format',
+            'site-timezone'        => 'Site timezone',
+            'site-locale'          => 'Site language',
+            'date-format'          => 'Date format',
+            'incident-date-format' => 'Incident timestamp format',
         ],
         'security' => [
             'allowed-domains'      => 'Allowed domains',
@@ -172,6 +190,10 @@ return [
             'description' => 'Invite your team members by entering their email addresses here.',
             'email'       => 'Email #:id',
         ],
+    ],
+
+    'general' => [
+        'timezone' => 'Select Timezone',
     ],
 
     // Buttons

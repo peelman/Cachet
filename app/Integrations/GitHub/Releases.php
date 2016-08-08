@@ -9,12 +9,14 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Integrations;
+namespace CachetHQ\Cachet\Integrations\GitHub;
 
+use CachetHQ\Cachet\Bus\Events\System\SystemCheckedForUpdatesEvent;
+use CachetHQ\Cachet\Integrations\Contracts\Releases as ReleasesContract;
 use GuzzleHttp\Client;
 use Illuminate\Contracts\Cache\Repository;
 
-class Releases
+class Releases implements ReleasesContract
 {
     /**
      * The default url.
@@ -80,6 +82,8 @@ class Releases
             if ($this->token) {
                 $headers['OAUTH-TOKEN'] = $this->token;
             }
+
+            event(new SystemCheckedForUpdatesEvent());
 
             return json_decode((new Client())->get($this->url, [
                 'headers' => $headers,
